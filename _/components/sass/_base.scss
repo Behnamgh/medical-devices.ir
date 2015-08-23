@@ -33,3 +33,29 @@ p.matn {
   line-height: 160%;
   justify-content: flex-start;
 }
+body{
+  background-color: #C5D4D9;
+}
+nav{
+  background-color: $lightgray;
+}
+ul.nav li a{
+color: white;
+}
+ul.nav li a:hover{
+background-color: $darkgray;
+}
+.jumbotron{
+border: 4px solid black;
+border-radius: 35px;
+}
+div.col-lg-3{
+  border: 1px dotted black;
+  border-radius: 25px;
+}
+div.col-lg-2{
+  border: 2px solid black;
+}
+.carousel-caption{
+  color: black;
+}
