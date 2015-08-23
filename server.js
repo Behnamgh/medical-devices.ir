@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 app.use(express.static('public'));
 
 
-//-------------------------
+//--------------------------
 require("./app/routes.js")(app); // load our routes and pass in our app and fully configured passport
 
 //-------------------------------
