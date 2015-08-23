@@ -9,7 +9,6 @@ app.set('views', __dirname + '/views');
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use("/js", express.static(path.join(__dirname, "public/js")));
 app.use("/css", express.static(path.join(__dirname, "public/css")));
-app.use("/fonts", express.static(path.join(__dirname, "public/fonts")));
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 

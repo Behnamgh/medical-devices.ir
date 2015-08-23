@@ -1,0 +1,35 @@
+
+@font-face {
+  font-family: "JF Flat Regular";
+  src: url("public/fonts/JF-Flat-regular.eot");
+  src: url("public/fonts/JF-Flat-regular.eot?#iefix") format('embedded-opentype'), url("public/fonts/JF-Flat-regular.svg#JF Flat Regular") format('svg'), url("public/fonts/JF-Flat-regular.woff") format('woff'), url("public/fonts/JF-Flat-regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "khati";
+  src: url("public/fonts/Akhat-khati.eot");
+  src: url("public/fonts/Akhat-khati.eot?#iefix") format('embedded-opentype'), url("public/fonts/Akhat-khati.svg#JF Flat Regular") format('svg'), url("public/fonts/Akhat-khati.woff") format('woff'), url("public/fonts/Akhat-khati.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "afsane";
+  src: url("public/fonts/AAfsaneh.eot");
+  src: url("public/fonts/AAfsaneh.eot?#iefix") format('embedded-opentype'), url("public/fonts/AAfsaneh.svg#JF Flat Regular") format('svg'), url("public/fonts/AAfsaneh.woff") format('woff'), url("public/fonts/AAfsaneh.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'bnazanb';
+  src: url("public/fonts/bnazanb.eot");
+  src: local('public/fonts/bnazanb'), url("public/fonts/bnazanb.woff") format('woff'), url("public/fonts/bnazanb.ttf") format('truetype');
+}
+.matn {
+  direction: rtl;
+  font-family: 'khati';
+}
+p.matn {
+  line-height: 160%;
+  justify-content: flex-start;
+}
