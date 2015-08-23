@@ -1,0 +1,48 @@
+{
+  "name": "medical-devices.ir",
+  "version": "1.0.0",
+  "description": "references for medical devices",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Behnamgh/medical-devices.ir.git"
+  },
+  "author": "Behnam Ghafary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Behnamgh/medical-devices.ir/issues"
+  },
+  "homepage": "https://github.com/Behnamgh/medical-devices.ir#readme",
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "connect-flash": "~0.1.1",
+    "bcrypt-nodejs": "latest",
+    "cookie-parser": "~1.0.0",
+    "ejs": "~0.8.5",
+    "express": "~4.0.0",
+    "express-session": "~1.0.0",
+    "jalali-date": "^0.1.5",
+    "jdate": "0.0.2",
+    "matchdep": "~0.1.2",
+    "method-override": "~1.0.0",
+    "mongoose": "^4.1.2",
+    "morgan": "~1.0.0",
+    "nodemailer": "^1.4.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "sendgrid": "^1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^0.24.0",
+    "eslint-grunt": "^1.0.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-compass": "~0.5.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-express-server": "^0.5.1"
+  }
+}
