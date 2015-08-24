@@ -45,10 +45,6 @@ color: white;
 ul.nav li a:hover{
 background-color: $darkgray;
 }
-div.col-lg-3{
-  border: 1px dotted black;
-  border-radius: 25px;
-}
 .carousel-caption{
   color: black;
 }
@@ -62,4 +58,8 @@ ul.dropdown-menu li a{
 }
 .sidebar-right{
   float: right;
+}
+div.col-lg-3:nth-of-type(1){
+  padding-left: 30px;
+  margin-left: 20px;
 }
