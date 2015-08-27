@@ -1,0 +1,40 @@
+{
+  "brands": [
+    {
+      "Mindray": {
+        "models": [
+          {
+            "name": "DC-7",
+            "date": 2009,
+            "clinicalapp": "General purpose, shared service",
+            "framrate": "Max. 700 fps"
+          },
+          {
+            "name": "DC-8",
+            "date": 2011,
+            "clinicalapp": "General purpose, shared service",
+            "framrate": "Max. 1,333 fps"
+          }
+        ]
+      }
+    },
+    {
+      "Philips": {
+        "models": [
+          {
+            "name": "Affiniti50",
+            "date": 2014,
+            "clinicalapp": "Cardiac, radiology, womens healthcare; includes TEE, MSK, GYN, breast, prostate, strain elastography, TDI imaging, speckle tracking",
+            "framrate": "Up to 1,400 FPS"
+          },
+          {
+            "name": "Affiniti70",
+            "date": 2014,
+            "clinicalapp": "Cardiac, radiology, womens healthcare; includes TEE, MSK, GYN, breast, prostate, strain elastography, shearwave elastography, TDI imaging, speckle tracking",
+            "framrate": "Up to 1,400 FPS"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+brands[0]
+  Mindray
+    models[0]
+      name s = DC-7
+      date n = 2009
+      clinicalapp s = General purpose, shared service
+      framrate s = Max. 700 fps
+    models[1]
+      name s = DC-8
+      date n = 2011
+      clinicalapp s = General purpose, shared service
+      framrate s = Max. 1,333 fps
+brands[1]
+  Philips
+    models[0]
+      name s = Affiniti50
+      date n = 2014
+      clinicalapp s = Cardiac, radiology, womens healthcare; includes TEE, MSK, GYN, breast, prostate, strain elastography, TDI imaging, speckle tracking
+      framrate s =Up to 1,400 FPS
+    models[1]
+      name s = Affiniti70
+      date n = 2014
+      clinicalapp s =Cardiac, radiology, womens healthcare; includes TEE, MSK, GYN, breast, prostate, strain elastography, shearwave elastography, TDI imaging, speckle tracking
+      framrate s =Up to 1,400 FPS
