@@ -8,6 +8,7 @@ var devicesSchema = mongoose.Schema({
         model  : String,
         year: Number,
          clinicalapp: String,
+         pic : String,
        framerate: String
      });
 

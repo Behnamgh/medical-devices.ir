@@ -51,7 +51,7 @@ module.exports = function(app, passport) {
 
   app.get("/brands/brands", function(req, res) {
     var finderresult = req.query.brandname;
-  Devices.find({"brand" : req.query.brandname}).exec(function(error, finderresult)  {
+  Devices.find({"brand" : req.query.brandname, "type" : "sono"}).exec(function(error, finderresult)  {
     res.json(finderresult);
 });
     });
@@ -70,11 +70,13 @@ module.exports = function(app, passport) {
 
   app.post("/deviceadd", function(req, res) {
     var newDevices = new Devices();
+    var pic = req.body.type + "/" + req.body.brandname  + "/" + req.body.modelname + ".jpg";
     newDevices.type = req.body.type;
     newDevices.brand = req.body.brandname;
     newDevices.model = req.body.modelname;
     newDevices.year = req.body.yearselect;
     newDevices.framerate = req.body.framerate;
+    newDevices.pic = pic;
     newDevices.clinicalapp = req.body.clinicalapp;
 
     newDevices.save(function(err) {
