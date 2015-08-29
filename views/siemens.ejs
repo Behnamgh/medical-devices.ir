@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="devicefinder" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,26 +30,34 @@
   <body>
     <script src="js/lib/jquery-2.1.4.min.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/controllers/app.js"></script>
     <div class="container-fluid">
+      <div class="jumbotron">
+<div ng-controller="SiemensController as devicefinder">
+  <table>
+              <tr>
+                <td>Brands name</td>
+                <td>model name</td>
+                <td>year</td>
+                <td>clinical application</td>
+                <td>frame rate</td>
+              </tr>
+              <tr ng-repeat="item in devicefinder.lists">
+                <td>{{item.brand}}</td>
+                <td>{{item.model}}</td>
+                <td>{{item.year}}</td>
+                <td>{{item.clinicalapp}}</td>
+                <td>{{item.framerate}}</td>
+              </tr>
 
-
-      <!-- The justified navigation menu is meant for single line per list item.
-           Multiple lines will require custom code not provided by Bootstrap. -->
-
-
-      <!-- Jumbotron -->
-      <% include partials/carousel.ejs %>
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <% include partials/login.ejs %>
-
-        <% include partials/sidenav.ejs %>
-      </div>
-
+            </table>
+</div>
+            </div>
       <!-- Site footer -->
-      <% include partials/footer.ejs %>
-
+      <footer class="footer">
+        <p>BehnamGh</p>
+      </footer>
 
     </div> <!-- /container -->
 

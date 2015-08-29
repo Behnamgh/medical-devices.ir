@@ -11,6 +11,10 @@ module.exports = function(app, passport) {
     res.render("index.ejs");
   });
 
+  app.get("/sonography", function(req, res) {
+    res.render("sono.ejs");
+  });
+
   // LOGIN ===============================
   // show the login form
   app.get("/login", function(req, res) {
@@ -45,20 +49,30 @@ module.exports = function(app, passport) {
     res.render("profile.ejs");
   });
 
-  app.get("/brands/mindray", function(req, res) {
-  Devices.find({"brandname" : "mindray"}).exec(function(error, results)  {
-    res.json(results);
+  app.get("/brands/brands", function(req, res) {
+    var finderresult = req.query.brandname;
+  Devices.find({"brand" : req.query.brandname}).exec(function(error, finderresult)  {
+    res.json(finderresult);
 });
     });
 
-    app.get("/mindray", function(req, res) {
+    app.get("/sono/mindray", function(req, res) {
       res.render("mindray.ejs");
+    });
+
+    app.get("/sono/siemens", function(req, res) {
+      res.render("siemens.ejs");
+    });
+
+    app.get("/sono/philips", function(req, res) {
+      res.render("philips.ejs");
     });
 
   app.post("/deviceadd", function(req, res) {
     var newDevices = new Devices();
-    newDevices.brandname = req.body.brandname;
-    newDevices.modelname = req.body.modelname;
+    newDevices.type = req.body.type;
+    newDevices.brand = req.body.brandname;
+    newDevices.model = req.body.modelname;
     newDevices.year = req.body.yearselect;
     newDevices.framerate = req.body.framerate;
     newDevices.clinicalapp = req.body.clinicalapp;

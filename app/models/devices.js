@@ -3,8 +3,9 @@ var mongoose = require("mongoose");
 
 var devicesSchema = mongoose.Schema({
 
-        brandname : String,
-        modelname  : String,
+        type : String,
+        brand : String,
+        model  : String,
         year: Number,
          clinicalapp: String,
        framerate: String
