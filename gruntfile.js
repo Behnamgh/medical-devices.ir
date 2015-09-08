@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         livereload: true
       },
       express: {
-        files: ["server.js", "config/*", "app/*"],
+        files: ["server.js", "config/*", "app/*", "app/models/*"],
         options: {
           spawn: false
         },

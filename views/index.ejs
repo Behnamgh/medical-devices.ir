@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="medicaldevice" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -31,10 +31,14 @@
 <body>
   <script src="../js/lib/jquery-2.1.4.min.js"></script>
   <script src="../js/lib/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/lib/angular.min.js"></script>
+  <script type="text/javascript" src="../js/lib/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="../js/controllers/app.js"></script>
   <div class="container-fluid">
     <% include partials/carousel.ejs %>
       <div class="row">
-        <% include partials/main.ejs %>
+        <a href="#/">*</a>
+        <ui-view></ui-view>
           <% include partials/sidenav.ejs %>
       </div>
       <% include partials/footer.ejs %>

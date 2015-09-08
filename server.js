@@ -10,10 +10,9 @@ var morgan = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 
-
 //------------------------------
-
-mongoose.connect("mongodb://ayandeyeman:locked@ds047792.mongolab.com:47792/ayandeyeman"); // connect to our database
+//mongoose.connect("mongodb://ayandeyeman:locked@ds047792.mongolab.com:47792/ayandeyeman"); // connect to our database
+mongoose.connect("mongodb://heroku_r6wpcfvx:dr7mqkrjiie8oos9oajk3cvvko@ds029207.mongolab.com:29207/heroku_r6wpcfvx"); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -32,7 +31,9 @@ app.use("/css", express.static(path.join(__dirname, "public/css")));
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 
-app.use(session({ secret: 'behnamgoozSCREW19locked' })); // session secret
+app.use(session({
+  secret: 'behnamgoozSCREW19locked'
+})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash());

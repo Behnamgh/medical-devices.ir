@@ -1,46 +1,7 @@
-<!DOCTYPE html>
-<html ng-app="devicefinder" lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="information about medical device and compare brands and models">
-  <meta name="author" content="Behnam Ghafary">
-  <link rel="icon" href="../../favicon.ico">
-
-  <title>Medical-devices.ir</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="../css/style.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="../css/lib/justified-nav.css" rel="stylesheet">
-</head>
-
-<body>
-  <script src="../js/lib/jquery-2.1.4.min.js"></script>
-  <script src="../js/lib/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/lib/angular.min.js"></script>
-  <script type="text/javascript" src="../js/controllers/app.js"></script>
-  <div class="container-fluid">
-    <% include partials/carousel.ejs %>
-      <div class="row">
-        <% include partials/philips.ejs %>
-        <% include partials/devicetable.ejs %>
+        <div ng-controller="PhilipsController as devicefinder">
+          <% include partials/modelpanel.ejs %>
 
 
-          <% include partials/sidenav.ejs %>
+
       </div>
-      <% include partials/footer.ejs %>
-  </div>
-  <!-- Site footer -->
-
-
-
-
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-</body>
-
-</html>

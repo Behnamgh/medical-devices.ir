@@ -1,327 +1,442 @@
-<div class="jumbotron">
+<div class="container">
 
-<h1>salam khosh galmisiz</h1>
-<form action="/deviceadd" method="post">
+  <h1>salam khosh galmisiz</h1>
+  <form action="/deviceadd" method="post">
 
-<label for="typeselect">device type:</label>
-<select id="typeselect" name="type">
-<option value="sono">sono</option>
-<option value="echo">echo</option>
-<option value="cardio">cardio</option>
-</select><br>
+    <label for="typeselect">device type:</label>
+    <select id="typeselect" name="type">
+      <option value="sono">sono</option>
+      <option value="echo">echo</option>
+      <option value="cardio">cardio</option>
+    </select>
+    <br>
 
-<label for="brandselect">brand name:</label>
-<select id="brandselect" name="brandname">
-<option value="mindray">mindray</option>
-<option value="philips">philips</option>
-<option value="siemens">siemens</option>
-</select><br>
+    <label for="brandselect">brand name:</label>
+    <select id="brandselect" name="brandname">
+      <option value="mindray">mindray</option>
+      <option value="philips">philips</option>
+      <option value="siemens">siemens</option>
+    </select>
+    <br>
 
-<label for="">Model name</label>
-<input type="text" name="modelname"><br>
+    <label for="">Model name</label>
+    <input type="text" name="modelname">
+    <br>
 
-<label for="yearselect">CE mark, date</label>
-<select id="yearselect" name="yearselect">
-<option value="2015">2015</option>
-<option value="2014">2014</option>
-<option value="2013">2013</option>
-<option value="2012">2012</option>
-<option value="2011">2011</option>
-<option value="2010">2010</option>
-<option value="2009">2009</option>
-<option value="2008">2008</option>
-<option value="2007">2007</option>
-</select><br>
+    <label for="yearselect">CE mark, date</label>
+    <select id="yearselect" name="yearselect">
+      <option value="2015">2015</option>
+      <option value="2014">2014</option>
+      <option value="2013">2013</option>
+      <option value="2012">2012</option>
+      <option value="2011">2011</option>
+      <option value="2010">2010</option>
+      <option value="2009">2009</option>
+      <option value="2008">2008</option>
+      <option value="2007">2007</option>
+    </select>
+    <br>
 
-<label for="">Clinical Applications</label>
-<input type="text" name="clinicalapp"><br>
+    <label for="">Clinical Applications</label>
+    <input type="text" name="clinicalapp">
+    <br>
 
-<label for="diffrent">What are the key differenciating factors of this system</label>
-<input type="text" name="diffrent"><br>
+    <label for="diffrent">What are the key differenciating factors of this system</label>
+    <input type="text" name="diffrent">
+    <br>
 
+    <h3>----------probe types,Mhz----------</h3>
 
-<label for="mechanic">Mechanical Sector</label>
-<input type="text" name="mechanic" value=""><br>
+    <label for="mechanic">Mechanical Sector</label>
+    <input type="text" name="mechanic" value="">
+    <br>
 
 
-<label for="annular">Annular Array</label>
-<input type="text" name="annular" value=""><br>
+    <label for="annular">Annular Array</label>
+    <input type="text" name="annular" value="">
+    <br>
 
 
-<label for="linear">Linear Array
-</label>
-<input type="text" name="linear" value=""><br>
+    <label for="linear">Linear Array
+    </label>
+    <input type="text" name="linear" value="">
+    <br>
 
 
-<label for="convex">Convex Array
-</label>
-<input type="text" name="convex" value=""><br>
+    <label for="convex">Convex Array
+    </label>
+    <input type="text" name="convex" value="">
+    <br>
 
 
-<label for="phased"></label>
-<input type="text" name="phased" value=""><br>
+    <label for="phased">Phased Array
+    </label>
+    <input type="text" name="phased" value="">
+    <br>
 
 
-<label for="multifq"></label>
-<input type="text" name="multifq" value=""><br>
+    <label for="multifq">Multifrequency
+    </label>
+    <input type="text" name="multifq" value="">
+    <br>
 
 
-<label for="endovaginal"></label>
-<input type="text" name="endovaginal" value=""><br>
+    <label for="endovaginal">Endovaginal
+    </label>
+    <input type="text" name="endovaginal" value="">
+    <br>
 
 
-<label for="endorectal"></label>
-<input type="text" name="endorectal" value=""><br>
+    <label for="endorectal">Endorectal
+    </label>
+    <input type="text" name="endorectal" value="">
+    <br>
 
 
-<label for="other"></label>
-<input type="text" name="other" value=""><br>
+    <label for="other">Others
+    </label>
+    <input type="text" name="other" value="">
+    <br>
 
 
-<label for="framerate"></label>
-<input type="text" name="framerate" value=""><br>
+    <label for="framerate">Frame Rate, fps
+    </label>
+    <input type="text" name="framerate" value="">
+    <br>
 
 
-<label for="grayscale"></label>
-<input type="number" name="grayscale" value=""><br>
+    <label for="grayscale">Grayscale Levels
+    </label>
+    <input type="number" name="grayscale" value="">
+    <br>
 
 
-<label for="preprocess"></label>
-<input type="text" name="preprocess" value=""><br>
+    <label for="preprocess">Preprocessing
+    </label>
+    <input type="text" name="preprocess" value="">
+    <br>
+
+
+    <label for="postprocess">Postprocessing
+    </label>
+    <input type="text" name="postprocess" value="">
+    <br>
 
 
-<label for="postprocess"></label>
-<input type="text" name="postprocess" value=""><br>
+    <label for="dispdepth">Max Display Depth, cm
+    </label>
+    <input type="number" name="dispdepth" value="">
+    <br>
+
+    <h3>----------Imaging modes----------</h3>
 
+    <label for="mmode">M-Mode Display
+    </label>
+    <select class="" name="mmode">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
 
-<label for="dispdepth"></label>
-<input type="number" name="dispdepth" value=""><br>
 
+    <label for="mmode2d">M-Mode and 2-D
+    </label>
+    <select class="" name="mmode2d">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
 
-<label for="mmode"></label>
-<select class="" name="mmode">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="mmode2d"></label>
-<select class="" name="mmode2d">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="3d"></label>
-<select class="" name="3d">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="4d"></label>
-<select class="" name="4d">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="harmonic-imaging"></label>
-<select class="" name="harmonic-imaging">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-<label for="dopplertype"></label>
-<input type="text" name="dopplertype" value=""><br>
-
-
-<label for="fqdisp"></label>
-<select class="" name="fqdisp">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="veldisp"></label>
-<select class="" name="veldisp">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="power"></label>
-<select class="" name="power">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="duplex"></label>
-<select class="" name="duplex">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="triplex"></label>
-<select class="" name="triplex">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="digital"></label>
-<select class="" name="digital">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="selectable"></label>
-<select class="" name="selectable">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="adjustable"></label>
-<select class="" name="adjustable">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="dynamicrec"></label>
-<select class="" name="dynamicrec">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="measurements"></label>
-<select class="" name="measurements">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="rtimg"></label>
-<select class="" name="rtimg">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="freez"></label>
-<select class="" name="freez">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="capacity"></label>
-<input type="number" name="capacity" value="gig number"><br>
-
-
-<label for="cine"></label>
-<input type="text" name="cine" value=""><br>
-
-
-<label for="dicom"></label>
-<select class="" name="dicom">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="pacs"></label>
-<select class="" name="pacs">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-<label for="cardiac"></label>
-<input type="text" name="cardiac" value=""><br>
-
-
-<label for="vasc"></label>
-<select class="" name="vasc">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="ob"></label>
-<select class="" name="ob">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="others"></label>
-<select class="" name="others">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-<label for="progprot"></label>
-<input type="text" name="name" value="progprot"><br>
-
-
-<label for="userprog"></label>
-<select class="" name="userprog">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="transrec"></label>
-<select class="" name="transrec">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="transperineal"></label>
-<select class="" name="transperineal">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-
-<label for="monitor"></label>
-<input type="text" name="monitor" value=""><br>
-
-
-<label for="split"></label>
-<select class="" name="split">
-  <option value="true">yes</option>
-  <option value="false">no</option>
-</select><br>
-
-<label for="power"></label>
-<input type="text" name="power" value=""><br>
-
-
-<label for="battery"></label>
-<input type="text" name="battery" value=""><br>
-
-
-<label for="hwd"></label>
-<input type="text" name="hwd" value=""><br>
-
-
-<label for="weight"></label>
-<input type="number" name="weight" value="weight in lb"><br>
-
-
-<label for="warr"></label>
-<input type="text" name="warr" value=""><br>
-
-
-<button type="submit" class="addbutton">add</button>
-</form>
-
-
-      </div>
+
+    <label for="3d">3-D
+    </label>
+    <select class="" name="3d">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="4d">4-D
+    </label>
+    <select class="" name="4d">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="harmonic-imaging">Harmonic Imaging
+    </label>
+    <select class="" name="harmonic-imaging">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+    <h3>----------Doppler----------</h3>
+
+    <label for="dopplertype">Type
+    </label>
+    <input type="text" name="dopplertype" value="">
+    <br>
+
+
+    <label for="fqdisp">Frequency Display
+    </label>
+    <select class="" name="fqdisp">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="veldisp">Velocity Display
+    </label>
+    <select class="" name="veldisp">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="power">Power Doppler
+    </label>
+    <select class="" name="power">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="duplex">Duplex Mode
+    </label>
+    <select class="" name="duplex">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="triplex">Triplex Mode
+    </label>
+    <select class="" name="triplex">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+    <h3>----------Functionality----------</h3>
+
+    <label for="digital">Digital calipers
+    </label>
+    <select class="" name="digital">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="selectable">Selectable dynamic range
+    </label>
+    <select class="" name="selectable">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="adjustable">Adjustable transmit focus
+    </label>
+    <select class="" name="adjustable">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="dynamicrec">Dynamic receive focus
+    </label>
+    <select class="" name="dynamicrec">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="measurements">Measurements on VCR replay
+    </label>
+    <select class="" name="measurements">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+    <h3>----------Pan/zoom----------</h3>
+
+    <label for="rtimg">Real-time image
+    </label>
+    <select class="" name="rtimg">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="freez">Frozen image
+    </label>
+    <select class="" name="freez">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+    <h3>----------Image Storage----------</h3>
+
+    <label for="capacity">Capacity, # of stored images
+    </label>
+    <input type="number" name="capacity" value="gig number">
+    <br>
+
+
+    <label for="cine">Cine
+    </label>
+    <input type="text" name="cine" value="">
+    <br>
+
+
+    <label for="dicom">DICOM 3.0 Compliant
+    </label>
+    <select class="" name="dicom">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="pacs">PACS interfaces
+    </label>
+    <select class="" name="pacs">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+    <h3>----------Analysis Packages----------</h3>
+
+    <label for="cardiac">Cardiac scanning
+    </label>
+    <input type="text" name="cardiac" value="">
+    <br>
+
+
+    <label for="vasc">Vascular scanning
+    </label>
+    <select class="" name="vasc">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="ob">OB/GYN Scanning
+    </label>
+    <select class="" name="ob">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="others">Others
+    </label>
+    <select class="" name="others">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+    <label for="progprot"># of user-programmable protocols
+    </label>
+    <input type="text" name="name" value="progprot">
+    <br>
+
+
+    <label for="userprog">User programmable formulas and tables
+    </label>
+    <select class="" name="userprog">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+    <h3>----------Needle Guides----------</h3>
+
+    <label for="transrec">Transrectal
+    </label>
+    <select class="" name="transrec">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+
+    <label for="transperineal">Transperineal
+    </label>
+    <select class="" name="transperineal">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+    <h3>----------Other features----------</h3>
+
+    <label for="monitor">Single/Dual monitors
+    </label>
+    <input type="text" name="monitor" value="">
+    <br>
+
+
+    <label for="split">Split screens
+    </label>
+    <select class="" name="split">
+      <option value="true">yes</option>
+      <option value="false">no</option>
+    </select>
+    <br>
+
+    <label for="power">Power requirements
+    </label>
+    <input type="text" name="power" value="">
+    <br>
+
+
+    <label for="battery">Battery operation
+    </label>
+    <input type="text" name="battery" value="">
+    <br>
+
+
+    <label for="hwd">H x W x D, in
+    </label>
+    <input type="text" name="hwd" value="">
+    <br>
+
+
+    <label for="weight">Weight, lb
+    </label>
+    <input type="number" name="weight" value="weight in lb">
+    <br>
+
+
+    <label for="warr">Warranty
+    </label>
+    <input type="text" name="warr" value="">
+    <br>
+
+
+    <button type="submit" class="addbutton">add</button>
+  </form>
+
+
+</div>
