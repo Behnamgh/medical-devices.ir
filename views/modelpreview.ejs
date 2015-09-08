@@ -1,23 +1,34 @@
-
-    <div ng-controller="ModelController as devicefinder">
-      <div ng-repeat="item in devicefinder.lists">
-        <h1><a href="#/sono">{{item.type}}</a>-><a ng-href="#/{{item.type}}/{{item.brand}}">{{item.brand}}</a></h1>
-      <div class="col-md-2 col-md-offset-1">
-            <div class="panel panel-default">
-              <div class="panel-heading text-center">{{item.model}}</div>
-              <div class="panel-body text-center">{{item.year}}</div>
-              <div class="panel-body text-center">{{item.clinicalapp}}</div>
-              <div class="panel-body text-center">{{item.diffrent}}</div>
-              <div class="panel-body text-center">{{item.mechanic}}</div>
-              <div class="panel-body text-center">{{item.annular}}</div>
-              <div class="panel-body text-center">{{item.linear}}</div>
-              <div class="panel-body text-center">{{item.convex}}</div>
-              <div class="panel-body text-center">{{item.phased}}</div>
-              <div class="panel-body text-center">{{item.multifq}}</div>
-              <div class="panel-body text-center">{{item.endovaginal}}</div>
-
-            </div>
+<div ng-controller="ModelController as devicefinder">
+  <div ng-repeat="item in devicefinder.lists">
+    <div class="col-md-6 col-md-offset-1">
+      <center><h1><a href="#/sono">{{item.type}}</a>-><a ng-href="#/{{item.type}}/{{item.brand}}">{{item.brand}}</a></h1></center>
+      <div class="panel panel-success">
+        <div class="panel-heading text-center">
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.model}}
         </div>
-        <div class="col-md-2 col-md-offset-5"><img ng-src="../images/{{item.pic}}" alt="modelpic" height="400px" width="200px"/></div>
-</div>
+        <div class="panel-body text-center">
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.year}}
+        </div>
+        <div class="panel-body text-center">
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.clinicalapp}}
+        </div>
+        <div class="panel-body text-center">
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.diffrent}}</div>
+        <div class="panel-body text-center">
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.mechanic}}</div>
+        <div class="panel-body text-center">
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.annular}}</div>
+        <div class="panel-body text-center">
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.linear}}</div>
+        <div class="panel-body text-center">
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.convex}}</div>
+        <div class="panel-body text-center">
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.phased}}</div>
+
+      </div>
+    </div>
+    <div class="col-md-2 col-md-offset-1">
+      <img class="modelpic" ng-src="../images/{{item.pic}}" alt="modelpic" height="400px" width="200px" />
+    </div>
   </div>
+</div>

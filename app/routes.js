@@ -76,7 +76,11 @@ app.get("/sono", function(req, res) {
 app.get("/sono/model/preview", function(req, res) {
   res.render("modelpreview.ejs");
 });
-////end of angular
+
+app.get("/sono/brandpreview", function(req, res) {
+  res.render("brandpreview.ejs");
+});
+////end of angular///sono/brandpreview
 
   app.get("/sono/mindray", function(req, res) {
     res.render("mindray.ejs");
