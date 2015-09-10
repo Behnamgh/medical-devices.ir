@@ -10,7 +10,7 @@ var morgan = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 
-//------------------------------
+//-----------------------------
 //mongoose.connect("mongodb://ayandeyeman:locked@ds047792.mongolab.com:47792/ayandeyeman"); // connect to our database
 mongoose.connect("mongodb://heroku_r6wpcfvx:dr7mqkrjiie8oos9oajk3cvvko@ds029207.mongolab.com:29207/heroku_r6wpcfvx"); // connect to our database
 

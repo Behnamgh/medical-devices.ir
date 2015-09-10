@@ -80,8 +80,16 @@ app.get("/sono/model/preview", function(req, res) {
 app.get("/sono/brandpreview", function(req, res) {
   res.render("brandpreview.ejs");
 });
+app.get("/angular/contactus", function(req, res) {
+  res.render("contact.ejs");
+});
+app.get("/angular/aboutus", function(req, res) {
+  res.render("about.ejs");
+});
+app.get("/angular/search", function(req, res) {
+  res.render("searchresult.ejs");
+});
 ////end of angular///sono/brandpreview
-
   app.get("/sono/mindray", function(req, res) {
     res.render("mindray.ejs");
   });
@@ -104,6 +112,14 @@ app.get("/sono/brandpreview", function(req, res) {
         res.json(finderresult);
       });
       });
+
+      app.get("/search/:id", function(req, res) {
+        Devices.find({
+          "_id": req.params.id
+        }).exec(function(error, finderresult) {
+          res.json(finderresult);
+        });
+        });
 
       app.get("/sono/:id", function(req, res) {
         res.render("modelpreview.ejs");
