@@ -43,7 +43,7 @@ angular.module("medicaldevice")
   .controller("SearchController", ['$http', '$stateParams', function($http, $stateParams) {
     var devicefinder = this;
     devicefinder.lists = [];
-    devicefinder.lists.keyword = $stateParams.searchkey;
+    devicefinder.keyword = $stateParams.searchkey;
     $http.get("/search/"+$stateParams.searchkey).success(function(data) {
       devicefinder.lists = data;
     });
