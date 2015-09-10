@@ -113,13 +113,15 @@ app.get("/angular/search", function(req, res) {
       });
       });
 
-      app.get("/search/:id", function(req, res) {
-        Devices.find({
-          "_id": req.params.id
-        }).exec(function(error, finderresult) {
+      app.get("/search/:searchkey", function(req, res) {
+        console.log(req.params.searchkey);
+        //Devices.find( { $or:[{ model: { $in: [ /req.params.searchkey/] } }, {brand: { $in: [/req.params.searchkey/]}}]} ).exec(function(error, finderresult) {
+        Devices.find( {$or: [ { model: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}]} ).exec(function(error, finderresult) {
           res.json(finderresult);
         });
         });
+      
+        // { model: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}
 
       app.get("/sono/:id", function(req, res) {
         res.render("modelpreview.ejs");
