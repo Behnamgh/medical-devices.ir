@@ -1,0 +1,23 @@
+<div ng-controller="SearchController2 as devicefinder">
+
+  <label>Search: <input ng-model="searchText"></label>
+<table id="searchTextResults">
+  <tr><th>Name</th><th>Phone</th></tr>
+  <tr ng-repeat="item in devicefinder.lists | filter:searchText">
+    <td>{{friend.name}}</td>
+    <td>{{friend.phone}}</td>
+  </tr>
+</table>
+<hr>
+
+
+  <h1>search result for: "{{devicefinder.keyword}}"</h1>
+
+  <div class="col-md-2 col-md-offset-1" ng-repeat="item in devicefinder.lists | filter:searchText">
+        <div class="panel panel-default">
+          <div class="panel-heading text-center"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a ng-href="#/{{item.type}}/model/{{item._id}}">&nbsp&nbsp{{item.brand}}</a></div>
+          <div class="panel-body text-center"> <img ng-src="../images/{{item.pic}}" alt="modelpic" height="200px" width="100px"/><br><a ng-href="#/{{item.type}}/model/{{item._id}}">{{item.model}}</a></div>
+        </div>
+    </div>
+
+</div>

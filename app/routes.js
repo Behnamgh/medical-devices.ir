@@ -112,15 +112,21 @@ app.get("/angular/search", function(req, res) {
         res.json(finderresult);
       });
       });
+      
+      app.get("/angular/mongo", function(req, res) {
+        Devices.find({}).exec(function(error, finderresult) {
+          res.json(finderresult);
+        });
+        });
 
       app.get("/search/:searchkey", function(req, res) {
         console.log(req.params.searchkey);
         //Devices.find( { $or:[{ model: { $in: [ /req.params.searchkey/] } }, {brand: { $in: [/req.params.searchkey/]}}]} ).exec(function(error, finderresult) {
-        Devices.find( {$or: [ { model: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}]} ).exec(function(error, finderresult) {
+        Devices.find( {$or: [ { model: { $regex: [ req.params.searchkey]  }}, { type: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}]} ).exec(function(error, finderresult) {
           res.json(finderresult);
         });
         });
-      
+
         // { model: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}
 
       app.get("/sono/:id", function(req, res) {

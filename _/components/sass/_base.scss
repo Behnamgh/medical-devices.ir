@@ -67,3 +67,24 @@ div.col-lg-3:nth-of-type(1) {
 img{
   border-radius: 10px;
 }
+.bnaz{
+  font-family: 'bnazanb';
+}
+hr{
+  width: 60%;
+  align: center;
+}
+div#content {
+    display: none;
+    }
+
+div#loading {
+    top: 200 px;
+    margin: auto;
+    position: absolute;
+    z-index: 1000;
+    width: 160px;
+    height: 24px;
+    background: url(loadingimage.gif) no-repeat;
+    cursor: wait;
+    }
