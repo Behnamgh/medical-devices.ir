@@ -12,10 +12,6 @@ angular.module("medicaldevice")
       url: "/device/:type",
       templateUrl: "/type"
     })
-    .state('device', {
-      url: "/:type/:brandname",
-      templateUrl: "/sono/brandpreview"
-    })
     .state('model', {
       url: "/sono/model/:modelid",
       templateUrl: "/sono/model/preview"
@@ -30,7 +26,11 @@ angular.module("medicaldevice")
     })
     .state('search', {
       url: "/browser/:searchkey",
-      templateUrl: "/angular/search"
+      templateUrl: "/search"
+    })
+    .state('device', {
+      url: "/:type/:brandname",
+      templateUrl: "/sono/brandpreview"
     })
   })
   .filter('unique', function() {
@@ -66,7 +66,7 @@ angular.module("medicaldevice")
     var devicefinder = this;
     devicefinder.lists = [];
     devicefinder.keyword = $stateParams.searchkey;
-    $http.get("/search/"+$stateParams.searchkey).success(function(data) {
+    $http.get("/searched/"+$stateParams.searchkey).success(function(data) {
       devicefinder.lists = data;
     });
   }])

@@ -49,17 +49,6 @@ module.exports = function(app, passport) {
     res.render("profile.ejs");
   });
 
-
-
-  app.get("/:type/brands/:brandname", function(req, res) {
-    Devices.find({
-      "brand": req.params.brandname,
-      "type": req.params.type
-    }).exec(function(error, finderresult) {
-      res.json(finderresult);
-    });
-  });
-
   app.get("/brands/:type", function(req, res) {
     Devices.find({
       "type": req.params.type
@@ -75,7 +64,7 @@ app.get("/main", function(req, res) {
   res.render("main.ejs");
 });
 app.get("/type", function(req, res) {
-  res.render("sono.ejs");
+  res.render("type.ejs");
 });
 app.get("/sono/model/preview", function(req, res) {
   res.render("modelpreview.ejs");
@@ -90,7 +79,7 @@ app.get("/angular/contactus", function(req, res) {
 app.get("/angular/aboutus", function(req, res) {
   res.render("about.ejs");
 });
-app.get("/angular/search", function(req, res) {
+app.get("/search", function(req, res) {
   res.render("searchresult.ejs");
 });
 ////end of angular///sono/brandpreview
@@ -99,10 +88,10 @@ app.get("/angular/search", function(req, res) {
 
 
 
-    app.get("/sono/model/:id", function(req, res) {
+    app.get("/:devicetype/model/:id", function(req, res) {
       Devices.find({
         "_id": req.params.id,
-        "type": "sono"
+        "type": req.params.devicetype
       }).exec(function(error, finderresult) {
         res.json(finderresult);
       });
@@ -114,13 +103,14 @@ app.get("/angular/search", function(req, res) {
         });
         });
 
-      app.get("/search/:searchkey", function(req, res) {
-        console.log(req.params.searchkey);
-        //Devices.find( { $or:[{ model: { $in: [ /req.params.searchkey/] } }, {brand: { $in: [/req.params.searchkey/]}}]} ).exec(function(error, finderresult) {
-        Devices.find( {$or: [ { model: { $regex: [ req.params.searchkey]  }}, { type: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}]} ).exec(function(error, finderresult) {
-          res.json(finderresult);
-        });
-        });
+
+
+        app.get("/searched/:searchkey", function(req, res) {
+          Devices.find( {$or: [{'brand': {'$regex': req.params.searchkey}}, {'model': {'$regex': req.params.searchkey}}, {'type': {'$regex': req.params.searchkey}}]})
+          .exec(function(error, finderresult) {
+            res.json(finderresult);
+          });
+          });
 
         // { model: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}
 
@@ -201,7 +191,14 @@ app.get("/angular/search", function(req, res) {
         res.json(results);
       });
     });
-
+    app.get("/:type/brands/:brandname", function(req, res) {
+      Devices.find({
+        "brand": req.params.brandname,
+        "type": req.params.type
+      }).exec(function(error, finderresult) {
+        res.json(finderresult);
+      });
+    });
   app.get("/*", function(req, res) {
     res.render("index.ejs");
   });
