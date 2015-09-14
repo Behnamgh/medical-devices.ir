@@ -10,11 +10,13 @@ lib-cov
 pids
 logs
 results
-
+pictures
+picture
 components
 npm-debug.log
 node_modules
 database
+banner.wowsl
 database.js
 .database
 .database.js
