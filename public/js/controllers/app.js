@@ -9,11 +9,11 @@ angular.module("medicaldevice")
       templateUrl: "/main"
     })
     .state('sono', {
-      url: "/sono",
-      templateUrl: "/sono"
+      url: "/device/:type",
+      templateUrl: "/type"
     })
     .state('device', {
-      url: "/sono/:brandname",
+      url: "/:type/:brandname",
       templateUrl: "/sono/brandpreview"
     })
     .state('model', {
@@ -33,10 +33,32 @@ angular.module("medicaldevice")
       templateUrl: "/angular/search"
     })
   })
+  .filter('unique', function() {
+ return function(collection, keyname) {
+    var output = [],
+        keys = [];
+
+    angular.forEach(collection, function(item) {
+        var key = item[keyname];
+        if(keys.indexOf(key) === -1) {
+            keys.push(key);
+            output.push(item);
+        }
+    });
+    return output;
+ };
+})
+  .controller("BrandmodelController", ['$http', '$stateParams', function($http, $stateParams) {
+    var devicefinder = this;
+    devicefinder.lists = [];
+    $http.get("/"+$stateParams.type+"/brands/"+$stateParams.brandname).success(function(data) {
+      devicefinder.lists = data;
+    });
+  }])
   .controller("BrandController", ['$http', '$stateParams', function($http, $stateParams) {
     var devicefinder = this;
     devicefinder.lists = [];
-    $http.get("/brands/brands?brandname="+$stateParams.brandname).success(function(data) {
+    $http.get("/brands/"+$stateParams.type).success(function(data) {
       devicefinder.lists = data;
     });
   }])
@@ -51,7 +73,7 @@ angular.module("medicaldevice")
   .controller("ModelController", ['$http', '$stateParams', function($http, $stateParams) {
     var devicefinder = this;
     devicefinder.lists = [];
-    $http.get("/sono/model/modelpre/"+$stateParams.modelid).success(function(data) {
+    $http.get("/sono/model/"+$stateParams.modelid).success(function(data) {
       devicefinder.lists = data;
     });
   }]);

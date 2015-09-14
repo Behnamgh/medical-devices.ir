@@ -1,10 +1,9 @@
-
-        <div class="col-lg-4">
-        <a href="#/sono/mindray"><img src="images/brands-logo/mindray.png" alt="mindray-logo" height="100px" width="200px"/></a>
-        </div>
-        <div class="col-lg-4">
-          <a href="#/sono/siemens"><img src="images/brands-logo/siemens.png" alt="siemens-logo" height="100px" width="200px"/></a>
-        </div>
-        <div class="col-lg-4">
-          <a href="#/sono/philips"><img src="images/brands-logo/philips.png" alt="philips-logo" height="100px" width="200px"/></a>
-        </div>
+<div ng-controller="BrandController as devicefinder"><br><br>
+  <div ng-repeat="item in devicefinder.lists | unique: 'brand'">
+    <div class="col-lg-3 col-lg-offset-1 brandlogo">
+      <a ng-href="#/{{item.type}}/{{item.brand}}">
+        <img ng-src="images/brands-logo/{{item.brand}}/logo.png" alt="{{item.brand}}-logo" height="100px" width="200px" />
+      </a>
+    </div>
+  </div>
+</div>

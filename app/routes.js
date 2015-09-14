@@ -49,11 +49,20 @@ module.exports = function(app, passport) {
     res.render("profile.ejs");
   });
 
-  app.get("/brands/brands", function(req, res) {
-    var finderresult = req.query.brandname;
+
+
+  app.get("/:type/brands/:brandname", function(req, res) {
     Devices.find({
-      "brand": req.query.brandname,
-      "type": "sono"
+      "brand": req.params.brandname,
+      "type": req.params.type
+    }).exec(function(error, finderresult) {
+      res.json(finderresult);
+    });
+  });
+
+  app.get("/brands/:type", function(req, res) {
+    Devices.find({
+      "type": req.params.type
     }).exec(function(error, finderresult) {
       res.json(finderresult);
     });
@@ -61,16 +70,11 @@ module.exports = function(app, passport) {
 
 //for angular templateUrl
 ///sono/philips/model///sono/mindray/model///sono/model/preview
-app.get("/sono/philips/model", function(req, res) {
-  res.render("philips.ejs");
-});
-app.get("/sono/mindray/model", function(req, res) {
-  res.render("mindray.ejs");
-});
+
 app.get("/main", function(req, res) {
   res.render("main.ejs");
 });
-app.get("/sono", function(req, res) {
+app.get("/type", function(req, res) {
   res.render("sono.ejs");
 });
 app.get("/sono/model/preview", function(req, res) {
@@ -90,21 +94,12 @@ app.get("/angular/search", function(req, res) {
   res.render("searchresult.ejs");
 });
 ////end of angular///sono/brandpreview
-  app.get("/sono/mindray", function(req, res) {
-    res.render("mindray.ejs");
-  });
-
-  app.get("/sono/siemens", function(req, res) {
-    res.render("siemens.ejs");
-  });
 
 
 
-  app.get("/sono/philips", function(req, res) {
-    res.render("philips.ejs");
-  });
 
-    app.get("/sono/model/modelpre/:id", function(req, res) {
+
+    app.get("/sono/model/:id", function(req, res) {
       Devices.find({
         "_id": req.params.id,
         "type": "sono"
@@ -112,7 +107,7 @@ app.get("/angular/search", function(req, res) {
         res.json(finderresult);
       });
       });
-      
+
       app.get("/angular/mongo", function(req, res) {
         Devices.find({}).exec(function(error, finderresult) {
           res.json(finderresult);
@@ -129,9 +124,6 @@ app.get("/angular/search", function(req, res) {
 
         // { model: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}
 
-      app.get("/sono/:id", function(req, res) {
-        res.render("modelpreview.ejs");
-        });
 
   app.post("/deviceadd", function(req, res) {
     var newDevices = new Devices();
@@ -209,6 +201,7 @@ app.get("/angular/search", function(req, res) {
         res.json(results);
       });
     });
+
   app.get("/*", function(req, res) {
     res.render("index.ejs");
   });

@@ -1,29 +1,40 @@
 <div ng-controller="ModelController as devicefinder">
   <div ng-repeat="item in devicefinder.lists">
     <div class="col-md-6 col-md-offset-1">
-      <center><h1><a href="#/sono">{{item.type}}</a>-><a ng-href="#/{{item.type}}/{{item.brand}}">{{item.brand}}</a></h1><h4><a ng-href="#/compare/{{item._id}}">(compare with)</a></h4></center>
+      <center>
+        <h1><a href="#/sono">{{item.type}}</a>-><a ng-href="#/{{item.type}}/{{item.brand}}">{{item.brand}}</a></h1>
+        <h4><a ng-href="#/compare/{{item._id}}">(compare with)</a></h4>
+      </center>
       <div class="panel panel-success">
         <div class="panel-heading text-center">
           <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.model}}
         </div>
         <div class="panel-body text-center">
           <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.year}}
-        </div><hr>
+        </div>
+        <hr>
         <div class="panel-body text-center">
           <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.clinicalapp}}
-        </div><hr>
+        </div>
+        <hr>
         <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.diffrent}}</div><hr>
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.diffrent}}</div>
+        <hr>
         <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.mechanic}}</div><hr>
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.mechanic}}</div>
+        <hr>
         <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.annular}}</div><hr>
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.annular}}</div>
+        <hr>
         <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.linear}}</div><hr>
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.linear}}</div>
+        <hr>
         <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.convex}}</div><hr>
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.convex}}</div>
+        <hr>
         <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.phased}}</div><hr>
+          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.phased}}</div>
+        <hr>
 
       </div>
     </div>

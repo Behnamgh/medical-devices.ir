@@ -5,7 +5,8 @@ var devicesSchema = mongoose.Schema({
 
   type: String,
   brand: String,
-  model: String,
+  features:[{
+    model: String,
   year: Number,
   clinicalapp: String,
   pic: String,
@@ -61,7 +62,7 @@ var devicesSchema = mongoose.Schema({
   hwd: String,
   weight: Number,
   warr: String
-
+}]
 });
 
 module.exports = mongoose.model("Devices", devicesSchema);

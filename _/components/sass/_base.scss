@@ -37,9 +37,13 @@ body {
 }
 .mainp{
   background-color: #F5F5F5;
+  border: solid green 1px;
+  border-radius: 5px;
 }
 nav {
   background-color: #F5F5F5;
+  border: solid green 1px;
+  border-radius: 5px;
 }
 ul.nav li a {
   color: black;
@@ -159,4 +163,21 @@ hr{
 .instuction a,
 .instuction a:visited {
 	color: #2F98B3;
+}
+.brandlogo img{
+  border: solid green 1px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.navbar, .panel{
+  border: solid green 1px;
+  border-radius: 5px;
+}
+.col-lg-4 hr{
+  color: $green;
+  width: 100%;
+}
+footer{
+  padding: 10px;
+  margin: 10px;
 }

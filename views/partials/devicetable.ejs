@@ -1,6 +1,8 @@
 <div class="col-md-2 col-md-offset-1" ng-repeat="item in devicefinder.lists">
-      <div class="panel panel-default">
-        <div class="panel-heading text-center"><a ng-href="/{{item.type}}/?id={{item._id}}">{{item.brand}}</a></div>
-        <div class="panel-body text-center"> <img ng-src="../images/{{item.pic}}" alt="modelpic" height="200px" width="100px"/><br><a ng-href="/{{item.type}}/?id={{item._id}}">{{item.model}}</a></div>
-      </div>
+  <div class="panel panel-default">
+    <div class="panel-heading text-center"><a ng-href="/{{item.type}}/?id={{item._id}}">{{item.brand}}</a></div>
+    <div class="panel-body text-center">
+      <img ng-src="../images/{{item.pic}}" alt="modelpic" height="200px" width="100px" />
+      <br><a ng-href="/{{item.type}}/?id={{item._id}}">{{item.model}}</a></div>
   </div>
+</div>
