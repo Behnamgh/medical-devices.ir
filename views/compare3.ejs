@@ -1,0 +1,101 @@
+<div ng-controller="Compare3Controller as device">
+  <div ng-repeat="item in device.model1">
+    <div ng-repeat="item1 in device.model2">
+      <br>
+      <h1>comparison table for {{item.type}}:</h1>
+      <br>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <center>
+            <table class="table jadval">
+              <thead>
+                <tr>
+                  <th>compare table</th>
+                  <th>1.<a ng-href="#/{{item.type}}/model/{{item._id}}">{{item.model}} from {{item.brand}}</a></th>
+                  <th>2.<a ng-href="#/{{item1.type}}/model/{{item1._id}}">{{item1.model}} from {{item1.brand}}</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="danger"><center>picture</center></td>
+                  <td class="active"><center><img ng-src="../images/{{item.pic}}" alt="modelpic" height="200px" width="100px" /></center></td>
+                  <td class="info"><center><img ng-src="../images/{{item1.pic}}" alt="modelpic" height="200px" width="100px" /></center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>clinicalapp</center></td>
+                  <td class="active"><center>{{item.clinicalapp}}</center></td>
+                  <td class="info"><center>{{item1.clinicalapp}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>year</center></td>
+                  <td class="active"><center>{{item.year}}</center></td>
+                  <td class="info"><center>{{item1.year}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>clinicalapp</center></td>
+                  <td class="active"><center>{{item.clinicalapp}}</center></td>
+                  <td class="info"><center>{{item1.clinicalapp}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>diffrent</center></td>
+                  <td class="active"><center>{{item.diffrent}}</center></td>
+                  <td class="info"><center>{{item1.diffrent}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center></center></td>
+                  <td class="active"><center>{{item.mechanic}}</center></td>
+                  <td class="info"><center>{{item1.mechanic}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>annular</center></td>
+                  <td class="active"><center>{{item.annular}}</center></td>
+                  <td class="info"><center>{{item1.annular}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>linear</center></td>
+                  <td class="active"><center>{{item.linear}}</center></td>
+                  <td class="info"><center>{{item1.linear}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>convex</center></td>
+                  <td class="active"><center>{{item.convex}}</center></td>
+                  <td class="info"><center>{{item1.convex}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>phased</center></td>
+                  <td class="active"><center>{{item.phased}}</center></td>
+                  <td class="info"><center>{{item1.phased}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>multifq</center></td>
+                  <td class="active"><center>{{item.multifq}}</center></td>
+                  <td class="info"><center>{{item1.multifq}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>endovaginal</center></td>
+                  <td class="active"><center>{{item.endovaginal}}</center></td>
+                  <td class="info"><center>{{item1.endovaginal}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>endorectal</center></td>
+                  <td class="active"><center>{{item.endorectal}}</center></td>
+                  <td class="info"><center>{{item1.endorectal}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>other</center></td>
+                  <td class="active"><center>{{item.other}}</center></td>
+                  <td class="info"><center>{{item1.other}}</center></td>
+                </tr>
+                <tr>
+                  <td class="danger"><center>framerate</center></td>
+                  <td class="active"><center>{{item.framerate}}</center></td>
+                  <td class="info"><center>{{item1.framerate}}</center></td>
+                </tr>
+              </tbody>
+            </table>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

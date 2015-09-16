@@ -29,7 +29,11 @@
     <!-- Start WOWSlider.com HEAD section -->
   <link rel="stylesheet" type="text/css" href="engine1/style.css" />
   <script type="text/javascript" src="engine1/jquery.js"></script>
+  <script type="text/javascript" src="../js/script.js">
+
+  </script>
   <!-- End WOWSlider.com HEAD section -->
+
 </head>
 
 <body>
@@ -39,6 +43,7 @@
   <script type="text/javascript" src="../js/lib/angular.min.js"></script>
   <script type="text/javascript" src="../js/lib/angular-ui-router.min.js"></script>
   <script type="text/javascript" src="../js/controllers/app.js"></script>
+
   <div class="container-fluid">
     <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -55,13 +60,6 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <script>
-  function redirect() {
-    document.location.href = '#/browser/' + document.getElementById('search').value;
-    document.getElementById('search').value = "";
-    return false;
-  }
-  </script>
     <form class="navbar-form navbar-left" onsubmit="return redirect();">
         <div class="form-group">
           <input id="search" type="text" class="form-control" placeholder="Search">
@@ -87,7 +85,7 @@
   </div><!-- /.container-fluid -->
 </nav>
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-sm-10">
 
 
 
@@ -112,13 +110,13 @@
 
         <ui-view>
           <div class="row mainp">
-            <div class="col-lg-4">
+            <div class="col-sm-4">
               <h2 class="matn">اداره کل تجهیزات پزشکی</h2><hr>
               <p class="matn">رتباط اساسی حوزه‌های مختلف لوازم و تجهیزات پزشکی با یکدیگر بررسی یکی بدون دیگری را غیر ممکن می‌سازد. به عنوان مثال بررسی‌های قیمت بی تردید مرتبط با سطح کیفیت کالای تولید شده می‌باشد. لذا بررسی‌های کیفیت، خود پاره‌ای از بررسی قیمت محسوب می‌گردد. حصول چنین دیدگاه مثبتی پس از چند سال تجربه عملکرد دفتر تجهیزات پزشکی و اداره کل بررسی قیمت منجر به ادغام این دو مرکز و تشکیل اداره کل تجهیزات پزشکی در سال ۱۳۷۲ زیر نظر معاونت درمان گردید. در سال ۱۳۸۴ با تغییر رویکرد وزارت بهداشت درمان و آموزش پزشکی و حمایت همه‌جانبه از توسعه امور نظارتی و مدیریتی در حوزه تجهیزات پزشکی، اداره کل تجهیزات پزشکی زیر نظر مرکز مدیریت و هماهنگی امور بازرگانی طرح‌های زیادی در زمینه‌های مرتبط به اجرا در آورد که یکی از مهمترین آنها تدوین ضوابط وسایل پزشکی بود.</p>
               <p><a class="btn btn-primary" href="#/device/sono" role="button">View details &raquo;</a></p>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-sm-4">
               <h2 class="matn">وظایف</h2><hr>
               <p class="matn">ر اساس قانون تشکیلات و وظایف وزارت بهداشت، درمان و آموزش پزشکی ایران مصوب سوم خرداد۶۷، تعیین ضوابط مربوط به ورود، ساخت، نگهداری، صدور مجوز این فعالیتها و انهدام تجهیزات و مواد مصرفی پزشکی، دندانپزشکی، آزمایشگاهی و توانبخشی و نیز ارزشیابی، نظارت و کنترل این ضوابط به عهده این وزارتخانه‌است.
 
@@ -127,7 +125,7 @@
 ترخیص این کالاها از گمرک نیز باید با کسب اجازه از وزارت بهداشت انجام شود.</p>
                 <p><a class="btn btn-primary" href="#/device/sono" role="button">View details &raquo;</a></p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-sm-4">
               <h2 class="matn">اداره تجهیزات آزمایشگاهی</h2><hr>
               <p class="matn">اداره تجهیزات آزمایشگاهی، تدوین استانداردها، کنترل کیفی و نظارت بر تولید، توزیع و وادرات تجهیزات، ملزومات، کیتها و مواد آزمایشگاهی تشخیص طبی داخلی و واداتی را برعهده دارد و در زمینه خدمات پس از فروش و نگهداری این وسایل با اداره مهندسی و نگهداری همکاری می‌کند. صدور مجوز، تدوین مقررات و ضوابط، تولید، واردات، خرید و فروش، نگهداری و توزیع تجهیزات، مواد کیتهای آزمایشگاهی و رسیدگی به شکایتهای رسیده از این کالاها با همکاری این اداره انجام می‌شود. در صورت لزوم نظر آزمایشگاه کنترل غذا دارو یا آزمایشگاههای رفرانس برای بررسی کیفی دستگاهها و مواد اخذ می‌شود.بررسی کیفیت و قیمت تجهیزات، مواد و کیتهای آزمایشگاهی برای پاسخ به استعلام دانشگاههای علوم پزشکی یا سایر مراکز بهداشت – درمانی نیز از دیگر فعالیتهای این اداره‌است.</p>
               <p><a class="btn btn-primary" href="#/device/sono" role="button">View details &raquo;</a></p>

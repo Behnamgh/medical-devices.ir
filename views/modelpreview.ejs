@@ -1,45 +1,108 @@
 <div ng-controller="ModelController as devicefinder">
   <div ng-repeat="item in devicefinder.lists">
-    <div class="col-md-6 col-md-offset-1">
-      <center>
-        <h1><a href="#/device/sono">{{item.type}}</a>-><a ng-href="#/{{item.type}}/{{item.brand}}">{{item.brand}}</a></h1>
-        <h4><a ng-href="#/compare/{{item._id}}">(compare with)</a></h4>
-      </center>
-      <div class="panel panel-success">
-        <div class="panel-heading text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.model}}
+    <ol class="breadcrumb">
+      <li><a href="#/device/sono">{{item.type}}</a></li>
+      <li><a href="#/{{item.type}}/{{item.brand}}">{{item.brand}}</a></li>
+      <li class="active">{{item.model}}</li>
+    </ol>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-1">
+        <center>
+          <h4><a ng-href="#/compare1/{{item.type}}/{{item._id}}">(compare with)</a></h4>
+        </center>
+        <div class="panel panel-success">
+          <div class="panel-heading text-center">
+            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.model}}
+          </div>
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.year}}
+          </div>
+          <hr>
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.clinicalapp}}
+          </div>
+          <hr>
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.diffrent}}</div>
+          <hr>
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.mechanic}}</div>
+          <hr>
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.annular}}</div>
+          <hr>
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.linear}}</div>
+          <hr>
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.convex}}</div>
+          <hr>
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.phased}}</div>
+          <hr>
+
         </div>
-        <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.year}}
+      </div>
+      <div class="col-sm-3 col-sm-offset-1">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+          <div class='carousel-outer'>
+            <!-- Wrapper for slides -->
+            <div class='carousel-inner'>
+              <div class='item active'>
+                <img src='../images/test/dc6.png' alt='' />
+              </div>
+              <div class='item'>
+                <img src='../images/test/dc7.png' alt='' />
+              </div>
+              <div class='item'>
+                <img src='../images/test/dc6.png' alt='' />
+              </div>
+              <div class='item'>
+                <img src='../images/test/dc8.png' alt='' />
+              </div>
+
+
+            </div>
+
+            <!-- Controls -->
+            <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+              <span class='glyphicon glyphicon-chevron-left'></span>
+            </a>
+            <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+              <span class='glyphicon glyphicon-chevron-right'></span>
+            </a>
+          </div>
+
+          <!-- Indicators -->
+          <ol class='carousel-indicators mCustomScrollbar'>
+            <li data-target='#carousel-custom' data-slide-to='0' class='active'>
+              <img src='../images/test/t6.png' alt='' />
+            </li>
+            <li data-target='#carousel-custom' data-slide-to='1'>
+              <img src='../images/test/t7.png' alt='' />
+            </li>
+            <li data-target='#carousel-custom' data-slide-to='1'>
+              <img src='../images/test/t6.png' alt='' />
+            </li>
+            <li data-target='#carousel-custom' data-slide-to='2'>
+              <img src='../images/test/t8.png' alt='' />
+            </li>
+
+          </ol>
         </div>
-        <hr>
-        <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.clinicalapp}}
-        </div>
-        <hr>
-        <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.diffrent}}</div>
-        <hr>
-        <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.mechanic}}</div>
-        <hr>
-        <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.annular}}</div>
-        <hr>
-        <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.linear}}</div>
-        <hr>
-        <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.convex}}</div>
-        <hr>
-        <div class="panel-body text-center">
-          <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.phased}}</div>
-        <hr>
+
+
 
       </div>
     </div>
-    <div class="col-md-2 col-md-offset-1">
-      <img class="modelpic" ng-src="../images/{{item.pic}}" alt="modelpic" height="400px" width="200px" />
-    </div>
+
   </div>
 </div>

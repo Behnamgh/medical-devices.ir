@@ -1,4 +1,33 @@
-<div ng-controller="SearchController as devicefinder">
-  <h1>search result for: "{{devicefinder.keyword}}"</h1>
-  <% include partials/modelpanel.ejs %>
+<div ng-controller="CompareController as device">
+  <div ng-repeat="item in device.device | limitTo: 1">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-2">
+        <h2>first item</h2>
+        <div class="panel panel-default">
+          <div class="panel-heading text-center">
+            <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a ng-href="#/{{item.type}}/model/{{item._id}}">&nbsp&nbsp{{item.brand}}</a></div>
+          <div class="panel-body text-center">
+            <img ng-src="../images/{{item.pic}}" alt="modelpic" height="200px" width="100px" />
+            <br><a ng-href="#/{{item.type}}/model/{{item._id}}">{{item.model}}</a></div>
+        </div>
+
+
+      </div>
+
+      <div ng-repeat="item1 in device.brand | unique: 'brand'">
+        <div class="col-sm-4 col-sm-offset-2">
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 brandlogo">
+              <a ng-href="#/compare2/{{item1.type}}/{{item1.brand}}/{{item._id}}">
+                <img ng-src="images/brands-logo/{{item1.brand}}/logo.png" alt="{{item1.brand}}-logo" height="100px" width="200px" />
+              </a>
+              <br>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

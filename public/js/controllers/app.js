@@ -28,6 +28,18 @@ angular.module("medicaldevice")
       url: "/browser/:searchkey",
       templateUrl: "/search"
     })
+    .state('compare1', {
+      url: "/compare1/:modeltype/:model1id",
+      templateUrl: "/compare1"
+    })
+    .state('compare2', {
+      url: "/compare2/:modeltype/:brandname/:model1id",
+      templateUrl: "/compare2"
+    })
+    .state('compare3', {
+      url: "/compare3/:modeltype/:model1id/:model2id",
+      templateUrl: "/compare3"
+    })
     .state('device', {
       url: "/:type/:brandname",
       templateUrl: "/sono/brandpreview"
@@ -68,6 +80,39 @@ angular.module("medicaldevice")
     devicefinder.keyword = $stateParams.searchkey;
     $http.get("/searched/"+$stateParams.searchkey).success(function(data) {
       devicefinder.lists = data;
+    });
+  }])
+  .controller("CompareController", ['$http', '$stateParams', function($http, $stateParams) {
+    var device = this;
+    device.device = [];
+    $http.get("/"+$stateParams.modeltype+"/model/"+$stateParams.model1id).success(function(data) {
+      device.device = data;
+    });
+    device.brand = [];
+    $http.get("/brands/"+$stateParams.modeltype).success(function(data) {
+      device.brand = data;
+    });
+  }])
+  .controller("Compare2Controller", ['$http', '$stateParams', function($http, $stateParams) {
+    var device = this;
+    device.device = [];
+    $http.get("/"+$stateParams.modeltype+"/model/"+$stateParams.model1id).success(function(data) {
+      device.device = data;
+    });
+    device.model = [];
+$http.get("/"+$stateParams.modeltype+"/brandsfilter/"+$stateParams.brandname+"/"+$stateParams.model1id).success(function(data) {
+        device.model = data;
+    });
+  }])
+  .controller("Compare3Controller", ['$http', '$stateParams', function($http, $stateParams) {
+    var device = this;
+    device.model1 = [];
+    $http.get("/"+$stateParams.modeltype+"/model/"+$stateParams.model1id).success(function(data) {
+      device.model1 = data;
+    });
+    device.model2 = [];
+    $http.get("/"+$stateParams.modeltype+"/model/"+$stateParams.model2id).success(function(data) {
+      device.model2 = data;
     });
   }])
   .controller("ModelController", ['$http', '$stateParams', function($http, $stateParams) {

@@ -1,0 +1,30 @@
+<div ng-controller="Compare2Controller as device">
+  <div ng-repeat="item in device.device | limitTo: 1">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-2">
+        <h2>first item</h2>
+        <div class="panel panel-default">
+          <div class="panel-heading text-center">
+            <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a ng-href="#/{{item.type}}/model/{{item._id}}">&nbsp&nbsp{{item.brand}}</a></div>
+          <div class="panel-body text-center">
+            <img ng-src="../images/{{item.pic}}" alt="modelpic" height="200px" width="100px" />
+            <br><a ng-href="#/{{item.type}}/model/{{item._id}}">{{item.model}}</a></div>
+        </div>
+      </div>
+
+      <div ng-repeat="item1 in device.model">
+        <div class="col-sm-4 col-sm-offset-2">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a ng-href="#/compare3/{{item.type}}/{{item._id}}/{{item1._id}}">&nbsp&nbsp{{item1.brand}}</a></div>
+            <div class="panel-body text-center">
+              <img ng-src="../images/{{item.pic}}" alt="modelpic" height="200px" width="100px" />
+              <br><a ng-href="#/compare3/{{item.type}}/{{item._id}}/{{item1._id}}">{{item1.model}}</a></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

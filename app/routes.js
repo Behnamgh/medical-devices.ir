@@ -84,7 +84,15 @@ app.get("/search", function(req, res) {
 });
 ////end of angular///sono/brandpreview
 
-
+app.get("/compare1", function(req, res) {
+  res.render("compare.ejs");
+});
+app.get("/compare2", function(req, res) {
+  res.render("compare2.ejs");
+});
+app.get("/compare3", function(req, res) {
+  res.render("compare3.ejs");
+});
 
 
 
@@ -195,6 +203,15 @@ app.get("/search", function(req, res) {
       Devices.find({
         "brand": req.params.brandname,
         "type": req.params.type
+      }).exec(function(error, finderresult) {
+        res.json(finderresult);
+      });
+    });
+    app.get("/:type/brandsfilter/:brandname/:filterid", function(req, res) {
+      Devices.find({
+        "brand": req.params.brandname,
+        "type": req.params.type,
+        "_id": { $ne: req.params.filterid }
       }).exec(function(error, finderresult) {
         res.json(finderresult);
       });
