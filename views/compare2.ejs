@@ -1,8 +1,8 @@
 <div ng-controller="Compare2Controller as device">
   <div ng-repeat="item in device.device | limitTo: 1">
     <div class="row">
-      <div class="col-sm-4 col-sm-offset-2">
-        <h2>first item</h2>
+      <div class="col-sm-4 col-sm-offset-1">
+        <h2>first item:</h2>
         <div class="panel panel-default">
           <div class="panel-heading text-center">
             <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a ng-href="#/{{item.type}}/model/{{item._id}}">&nbsp&nbsp{{item.brand}}</a></div>
@@ -13,6 +13,7 @@
       </div>
 
       <div ng-repeat="item1 in device.model">
+        <h2>choose one model of {{item.brand}}:</h2>
         <div class="col-sm-4 col-sm-offset-2">
           <div class="panel panel-default">
             <div class="panel-heading text-center">

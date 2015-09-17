@@ -1,4 +1,6 @@
-<div ng-controller="SearchController as devicefinder">
-  <h1>search result for: "{{devicefinder.keyword}}"</h1>
+<div ng-controller="SearchController as devicefinder"><br>
+  <h2 ng-show="devicefinder.lists.length">search result for: "{{devicefinder.keyword}}"</h2>
   <% include partials/modelpanel.ejs %>
+  <h2 ng-hide="devicefinder.lists.length"><br>No result found for "{{devicefinder.keyword}}"</h2>
+
 </div>

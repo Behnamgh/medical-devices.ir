@@ -1,6 +1,6 @@
 <div ng-controller="BrandController as devicefinder"><br><br>
   <div ng-repeat="item in devicefinder.lists | unique: 'brand'">
-    <div class="col-sm-3 col-sm-offset-1 brandlogo">
+    <div class="col-sm-2 col-sm-offset-1 brandlogo">
       <a ng-href="#/{{item.type}}/{{item.brand}}">
         <img ng-src="images/brands-logo/{{item.brand}}/logo.png" alt="{{item.brand}}-logo" height="100px" width="200px" />
       </a>
