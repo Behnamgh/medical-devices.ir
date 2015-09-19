@@ -11,8 +11,8 @@ module.exports = function(app, passport) {
     res.render("index.ejs");
   });
 
-  app.get("/sonography", function(req, res) {
-    res.render("sono.ejs");
+  app.get("/ultrasoundgraphy", function(req, res) {
+    res.render("ultrasound.ejs");
   });
 
   // LOGIN ===============================
@@ -58,7 +58,7 @@ module.exports = function(app, passport) {
   });
 
 //for angular templateUrl
-///sono/philips/model///sono/mindray/model///sono/model/preview
+///ultrasound/philips/model///ultrasound/mindray/model///ultrasound/model/preview
 
 app.get("/main", function(req, res) {
   res.render("main.ejs");
@@ -66,11 +66,11 @@ app.get("/main", function(req, res) {
 app.get("/type", function(req, res) {
   res.render("type.ejs");
 });
-app.get("/sono/model/preview", function(req, res) {
+app.get("/ultrasound/model/preview", function(req, res) {
   res.render("modelpreview.ejs");
 });
 
-app.get("/sono/brandpreview", function(req, res) {
+app.get("/ultrasound/brandpreview", function(req, res) {
   res.render("brandpreview.ejs");
 });
 app.get("/angular/contactus", function(req, res) {
@@ -82,7 +82,7 @@ app.get("/angular/aboutus", function(req, res) {
 app.get("/search", function(req, res) {
   res.render("searchresult.ejs");
 });
-////end of angular///sono/brandpreview
+////end of angular///ultrasound/brandpreview
 
 app.get("/compare1", function(req, res) {
   res.render("compare.ejs");
@@ -123,13 +123,13 @@ app.get("/compare3", function(req, res) {
         // { model: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}
 
 
-  app.post("/deviceadd", function(req, res) {
+  app.post("/ultrasoundadd", function(req, res) {
     var newDevices = new Devices();
-    var pic = req.body.type + "/" + req.body.brandname + "/" + req.body.modelname + ".jpg";
-    newDevices.type = req.body.type;
+    var pic = "ultrasound/" + req.body.brandname + "/" + req.body.modelname + ".jpg";
+    newDevices.type = "ultrasound";
     newDevices.brand = req.body.brandname;
     newDevices.model = req.body.modelname;
-    newDevices.year = req.body.yearselect;
+    newDevices.year = req.body.year;
     newDevices.clinicalapp = req.body.clinicalapp;
     newDevices.diffrent = req.body.diffrent;
     newDevices.mechanic = req.body.mechanic;

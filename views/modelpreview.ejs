@@ -1,56 +1,143 @@
 <div ng-controller="ModelController as devicefinder">
   <div ng-repeat="item in devicefinder.lists">
     <ol class="breadcrumb">
-      <li><a href="#/device/sono">{{item.type}}</a></li>
+      <li><a href="#/device/ultrasound">{{item.type}}</a></li>
       <li><a href="#/{{item.type}}/{{item.brand}}">{{item.brand}}</a></li>
       <li class="active">{{item.model}}</li>
     </ol>
     <div class="row">
       <div class="col-sm-6 col-sm-offset-1">
         <center>
-          <h4><a ng-href="#/compare1/{{item.type}}/{{item._id}}">(compare with)</a></h4>
+          <h4><a ng-href="#/compare1/{{item.type}}/{{item._id}}">(compare with other device)</a></h4>
         </center>
-        <div class="panel panel-success">
-          <div class="panel-heading text-center">
-            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.model}}
-          </div>
-          <div class="panel-body text-center">
-            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.year}}
-          </div>
-          <hr>
-          <div class="panel-body text-center">
-            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp {{item.clinicalapp}}
-          </div>
-          <hr>
-          <div class="panel-body text-center">
-            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.diffrent}}</div>
-          <hr>
-          <div class="panel-body text-center">
-            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.mechanic}}</div>
-          <hr>
-          <div class="panel-body text-center">
-            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.annular}}</div>
-          <hr>
-          <div class="panel-body text-center">
-            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.linear}}</div>
-          <hr>
-          <div class="panel-body text-center">
-            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.convex}}</div>
-          <hr>
-          <div class="panel-body text-center">
-            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp{{item.phased}}</div>
-          <hr>
+        <table class="table jadval">
+          <thead>
+            <tr>
+              <th>information table</th>
+              <th>information about<a ng-href="#/{{item.type}}/model/{{item._id}}"> {{item.model}} from {{item.brand}}</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="danger">
+                <center>clinicalapp</center>
+              </td>
+              <td class="active">
+                <center>{{item.clinicalapp}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>year</center>
+              </td>
+              <td class="active">
+                <center>{{item.year}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>clinicalapp</center>
+              </td>
+              <td class="active">
+                <center>{{item.clinicalapp}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>diffrent</center>
+              </td>
+              <td class="active">
+                <center>{{item.diffrent}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center></center>
+              </td>
+              <td class="active">
+                <center>{{item.mechanic}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>annular</center>
+              </td>
+              <td class="active">
+                <center>{{item.annular}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>linear</center>
+              </td>
+              <td class="active">
+                <center>{{item.linear}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>convex</center>
+              </td>
+              <td class="active">
+                <center>{{item.convex}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>phased</center>
+              </td>
+              <td class="active">
+                <center>{{item.phased}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>multifq</center>
+              </td>
+              <td class="active">
+                <center>{{item.multifq}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>endovaginal</center>
+              </td>
+              <td class="active">
+                <center>{{item.endovaginal}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>endorectal</center>
+              </td>
+              <td class="active">
+                <center>{{item.endorectal}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>other</center>
+              </td>
+              <td class="active">
+                <center>{{item.other}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>framerate</center>
+              </td>
+              <td class="active">
+                <center>{{item.framerate}}</center>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-        </div>
       </div>
-      <div class="col-sm-3 col-sm-offset-1">
+      <div class="col-sm-3">
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
 
         <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
           <div class='carousel-outer'>

@@ -5,7 +5,7 @@ var devicesSchema = mongoose.Schema({
 
   type: String,
   brand: String,
-    model: String,
+  model: String,
   year: Number,
   clinicalapp: String,
   pic: String,

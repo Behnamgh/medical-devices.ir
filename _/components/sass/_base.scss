@@ -168,14 +168,9 @@ hr {
   border-radius: 5px;
   padding: 10px;
 }
-.navbar,
-.panel {
+.navbar, .panel {
   border: solid green 1px;
   border-radius: 5px;
-}
-.col-lg-4 hr {
-  color: $green;
-  width: 100%;
 }
 footer {
   padding: 10px;
@@ -189,13 +184,13 @@ footer {
 .jadval tr:last-child td:last-child{
     border-bottom-right-radius: 10px;
 }
-td.danger{
+.jadval td.danger{
   width:16%;
 }
-td.info{
+.jadval td.info{
   width:42%;
 }
-td.active{
+.jadval td.active{
   width:42%;
 }
 #carousel-example-generic {
@@ -236,4 +231,10 @@ td.active{
 }
 #carousel-custom .carousel-outer {
     position: relative;
+}
+.col-sm-6 table tbody tr td.danger{
+  width:30%;
+}
+.col-sm-6 table tbody tr td.active{
+  width:70%;
 }

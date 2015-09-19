@@ -11,10 +11,13 @@
             <br><a ng-href="#/{{item.type}}/model/{{item._id}}">{{item.model}}</a></div>
         </div>
       </div>
+<div ng-repeat="item2 in device.model | limitTo: 1">
+  <h2 >choose one model of {{item2.brand}}:</h2>
 
-      <div ng-repeat="item1 in device.model">
-        <h2>choose one model of {{item.brand}}:</h2>
+</div>
         <div class="col-sm-4 col-sm-offset-2">
+          <div ng-repeat="item1 in device.model">
+
           <div class="panel panel-default">
             <div class="panel-heading text-center">
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a ng-href="#/compare3/{{item.type}}/{{item._id}}/{{item1._id}}">&nbsp&nbsp{{item1.brand}}</a></div>

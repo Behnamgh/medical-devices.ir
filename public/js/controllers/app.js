@@ -8,13 +8,13 @@ angular.module("medicaldevice")
       url: "/",
       templateUrl: "/main"
     })
-    .state('sono', {
+    .state('ultrasound', {
       url: "/device/:type",
       templateUrl: "/type"
     })
     .state('model', {
-      url: "/sono/model/:modelid",
-      templateUrl: "/sono/model/preview"
+      url: "/ultrasound/model/:modelid",
+      templateUrl: "/ultrasound/model/preview"
     })
     .state('aboutus', {
       url: "/aboutus",
@@ -42,7 +42,7 @@ angular.module("medicaldevice")
     })
     .state('device', {
       url: "/:type/:brandname",
-      templateUrl: "/sono/brandpreview"
+      templateUrl: "/ultrasound/brandpreview"
     })
   })
   .filter('unique', function() {
@@ -118,7 +118,7 @@ $http.get("/"+$stateParams.modeltype+"/brandsfilter/"+$stateParams.brandname+"/"
   .controller("ModelController", ['$http', '$stateParams', function($http, $stateParams) {
     var devicefinder = this;
     devicefinder.lists = [];
-    $http.get("/sono/model/"+$stateParams.modelid).success(function(data) {
+    $http.get("/ultrasound/model/"+$stateParams.modelid).success(function(data) {
       devicefinder.lists = data;
     });
   }]);
