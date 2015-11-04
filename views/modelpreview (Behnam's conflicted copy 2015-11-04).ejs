@@ -1,0 +1,195 @@
+<div ng-controller="ModelController as devicefinder">
+  <div ng-repeat="item in devicefinder.lists">
+    <ol class="breadcrumb">
+      <li><a href="#/device/ultrasound">{{item.type}}</a></li>
+      <li><a href="#/{{item.type}}/{{item.brand}}">{{item.brand}}</a></li>
+      <li class="active">{{item.model}}</li>
+    </ol>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-1">
+        <center>
+          <h4><a ng-href="#/compare1/{{item.type}}/{{item._id}}">(compare with other device)</a></h4>
+        </center>
+        <table class="table jadval">
+          <thead>
+            <tr>
+              <th>information table</th>
+              <th>information about<a ng-href="#/{{item.type}}/model/{{item._id}}"> {{item.model}} from {{item.brand}}</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="danger">
+                <center>clinicalapp</center>
+              </td>
+              <td class="active">
+                <center>{{item.clinicalapp}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>year</center>
+              </td>
+              <td class="active">
+                <center>{{item.year}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>clinicalapp</center>
+              </td>
+              <td class="active">
+                <center>{{item.clinicalapp}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>diffrent</center>
+              </td>
+              <td class="active">
+                <center>{{item.diffrent}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center></center>
+              </td>
+              <td class="active">
+                <center>{{item.mechanic}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>annular</center>
+              </td>
+              <td class="active">
+                <center>{{item.annular}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>linear</center>
+              </td>
+              <td class="active">
+                <center>{{item.linear}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>convex</center>
+              </td>
+              <td class="active">
+                <center>{{item.convex}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>phased</center>
+              </td>
+              <td class="active">
+                <center>{{item.phased}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>multifq</center>
+              </td>
+              <td class="active">
+                <center>{{item.multifq}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>endovaginal</center>
+              </td>
+              <td class="active">
+                <center>{{item.endovaginal}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>endorectal</center>
+              </td>
+              <td class="active">
+                <center>{{item.endorectal}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>other</center>
+              </td>
+              <td class="active">
+                <center>{{item.other}}</center>
+              </td>
+            </tr>
+            <tr>
+              <td class="danger">
+                <center>framerate</center>
+              </td>
+              <td class="active">
+                <center>{{item.framerate}}</center>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col-sm-3">
+        <br>
+        <br>
+
+
+        <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+          <div class='carousel-outer'>
+            <!-- Wrapper for slides -->
+            <div class='carousel-inner'>
+              <div class='item active'>
+                <img src='../images/test/1.png' alt='' />
+              </div>
+              <div class='item'>
+                <img src='../images/test/2.png' alt='' />
+              </div>
+              <div class='item'>
+                <img src='../images/test/1.png' alt='' />
+              </div>
+              <div class='item'>
+                <img src='../images/test/3.png' alt='' />
+              </div>
+
+
+            </div>
+
+            <!-- Controls -->
+            <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+              <span class='glyphicon glyphicon-chevron-left'></span>
+            </a>
+            <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+              <span class='glyphicon glyphicon-chevron-right'></span>
+            </a>
+          </div>
+
+          <!-- Indicators -->
+          <ol class='carousel-indicators mCustomScrollbar'>
+            <li data-target='#carousel-custom' data-slide-to='0' class='active'>
+              <img src='../images/test/1t.png' alt='' />
+            </li>
+            <li data-target='#carousel-custom' data-slide-to='1'>
+              <img src='../images/test/2t.png' alt='' />
+            </li>
+            <li data-target='#carousel-custom' data-slide-to='2'>
+              <img src='../images/test/1t.png' alt='' />
+            </li>
+            <li data-target='#carousel-custom' data-slide-to='3'>
+              <img src='../images/test/2t.png' alt='' />
+            </li>
+
+          </ol>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+</div>

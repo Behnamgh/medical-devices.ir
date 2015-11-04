@@ -178,8 +178,8 @@ app.get("/compare3", function(req, res) {
     newDevices.transperineal = req.body.transperineal;
     newDevices.monitor = req.body.monitor;
     newDevices.split = req.body.split;
-    newDevices.powerr = req.body.powerr;
-    newDevices.battery = req.body.battery;
+    newDevices.power = req.body.power;
+    newDevices.batterybattery = req.body.battery;
     newDevices.hwd = req.body.hwd;
     newDevices.weight = req.body.weight;
     newDevices.warr = req.body.warr;
