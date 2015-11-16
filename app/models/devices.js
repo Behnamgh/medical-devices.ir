@@ -56,7 +56,7 @@ var devicesSchema = mongoose.Schema({
   transperineal: Boolean,
   monitor: String,
   split: Boolean,
-  power: String,
+  powerr: String,
   battery: String,
   hwd: String,
   weight: Number,

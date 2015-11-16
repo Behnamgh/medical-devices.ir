@@ -1,13 +1,9 @@
 "use strict";
 var Devices = require("./models/devices");
-var User = require("./models/user");
-var mongoose = require("mongoose");
-
 
 module.exports = function(app, passport) {
 
   // normal routes-------------------------------------------------------------
-  mongoose.connect("mongodb://behnam:locked@ds049288.mongolab.com:49288/behnam"); // connect to our database
 
 
   // show the home page (will also have our login links)
@@ -61,84 +57,70 @@ module.exports = function(app, passport) {
     });
   });
 
-  //for angular templateUrl
-  ///ultrasound/philips/model///ultrasound/mindray/model///ultrasound/model/preview
+//for angular templateUrl
+///ultrasound/philips/model///ultrasound/mindray/model///ultrasound/model/preview
 
-  app.get("/main", function(req, res) {
-    res.render("main.ejs");
-  });
-  app.get("/type", function(req, res) {
-    res.render("type.ejs");
-  });
-  app.get("/ultrasound/model/preview", function(req, res) {
-    res.render("modelpreview.ejs");
-  });
+app.get("/main", function(req, res) {
+  res.render("main.ejs");
+});
+app.get("/type", function(req, res) {
+  res.render("type.ejs");
+});
+app.get("/ultrasound/model/preview", function(req, res) {
+  res.render("modelpreview.ejs");
+});
 
-  app.get("/ultrasound/brandpreview", function(req, res) {
-    res.render("brandpreview.ejs");
-  });
-  app.get("/angular/contactus", function(req, res) {
-    res.render("contact.ejs");
-  });
-  app.get("/angular/aboutus", function(req, res) {
-    res.render("about.ejs");
-  });
-  app.get("/search", function(req, res) {
-    res.render("searchresult.ejs");
-  });
-  ////end of angular///ultrasound/brandpreview
+app.get("/ultrasound/brandpreview", function(req, res) {
+  res.render("brandpreview.ejs");
+});
+app.get("/angular/contactus", function(req, res) {
+  res.render("contact.ejs");
+});
+app.get("/angular/aboutus", function(req, res) {
+  res.render("about.ejs");
+});
+app.get("/search", function(req, res) {
+  res.render("searchresult.ejs");
+});
+////end of angular///ultrasound/brandpreview
 
-  app.get("/compare1", function(req, res) {
-    res.render("compare.ejs");
-  });
-  app.get("/compare2", function(req, res) {
-    res.render("compare2.ejs");
-  });
-  app.get("/compare3", function(req, res) {
-    res.render("compare3.ejs");
-  });
-
-
-
-  app.get("/:devicetype/model/:id", function(req, res) {
-    Devices.find({
-      "_id": req.params.id,
-      "type": req.params.devicetype
-    }).exec(function(error, finderresult) {
-      res.json(finderresult);
-    });
-  });
-
-  app.get("/angular/mongo", function(req, res) {
-    Devices.find({}).exec(function(error, finderresult) {
-      res.json(finderresult);
-    });
-  });
+app.get("/compare1", function(req, res) {
+  res.render("compare.ejs");
+});
+app.get("/compare2", function(req, res) {
+  res.render("compare2.ejs");
+});
+app.get("/compare3", function(req, res) {
+  res.render("compare3.ejs");
+});
 
 
 
-  app.get("/searched/:searchkey", function(req, res) {
-    Devices.find({
-        $or: [{
-          'brand': {
-            '$regex': req.params.searchkey
-          }
-        }, {
-          'model': {
-            '$regex': req.params.searchkey
-          }
-        }, {
-          'type': {
-            '$regex': req.params.searchkey
-          }
-        }]
-      })
-      .exec(function(error, finderresult) {
+    app.get("/:devicetype/model/:id", function(req, res) {
+      Devices.find({
+        "_id": req.params.id,
+        "type": req.params.devicetype
+      }).exec(function(error, finderresult) {
         res.json(finderresult);
       });
-  });
+      });
 
-  // { model: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}
+      app.get("/angular/mongo", function(req, res) {
+        Devices.find({}).exec(function(error, finderresult) {
+          res.json(finderresult);
+        });
+        });
+
+
+
+        app.get("/searched/:searchkey", function(req, res) {
+          Devices.find( {$or: [{'brand': {'$regex': req.params.searchkey}}, {'model': {'$regex': req.params.searchkey}}, {'type': {'$regex': req.params.searchkey}}]})
+          .exec(function(error, finderresult) {
+            res.json(finderresult);
+          });
+          });
+
+        // { model: { $regex: [ req.params.searchkey]  }},  {  brand: { $regex: [ req.params.searchkey]  }}
 
 
   app.post("/ultrasoundadd", function(req, res) {
@@ -196,8 +178,8 @@ module.exports = function(app, passport) {
     newDevices.transperineal = req.body.transperineal;
     newDevices.monitor = req.body.monitor;
     newDevices.split = req.body.split;
-    newDevices.power = req.body.power;
-    newDevices.batterybattery = req.body.battery;
+    newDevices.powerr = req.body.powerr;
+    newDevices.battery = req.body.battery;
     newDevices.hwd = req.body.hwd;
     newDevices.weight = req.body.weight;
     newDevices.warr = req.body.warr;
@@ -213,76 +195,27 @@ module.exports = function(app, passport) {
     res.send("your devices added to list,thank you very muchhhhhh");
   });
   app.get("/mongo", isLoggedIn, function(req, res) {
-    Devices.find({}).exec(function(error, results) {
-      res.json(results);
+      Devices.find({}).exec(function(error, results) {
+        res.json(results);
+      });
     });
-  });
-  app.get("/:type/brands/:brandname", function(req, res) {
-    Devices.find({
-      "brand": req.params.brandname,
-      "type": req.params.type
-    }).exec(function(error, finderresult) {
-      res.json(finderresult);
+    app.get("/:type/brands/:brandname", function(req, res) {
+      Devices.find({
+        "brand": req.params.brandname,
+        "type": req.params.type
+      }).exec(function(error, finderresult) {
+        res.json(finderresult);
+      });
     });
-  });
-
-  //=====================this part most be deleted and its for game register test=======
-  app.get("/register", function(req, res) {
-    var host = req.get("host");
-    if (req.query.rand) {
-      if ((req.protocol + "://" + req.get("host")) == ("http://" + host)) {
-        User.findOne({
-          "nickname": req.query.nick
-        }).exec(function(err, result) {
-          console.log(result);
-          if (result.registered == false) {
-            if (result.randomkey == req.query.rand) {
-              User.update({
-                "nickname": req.query.nick,
-                "registered": false
-              }, {
-                $set: {
-                  "registered": true
-                }
-              }, function(err) {
-                console.log(err);
-              });
-              console.log(result.email + " is verified");
-              var txt = 'https://api.telegram.org/bot127367067:AAH7oUB3iKXC9SwH9jrGMjJ_pnxjhsAD1E0/sendMessage?chat_id=110176673&text=linke click shode doroste va ' + req.query.nick + ' ok shod';
-              res.format({
-                'text/html': function() {
-                  res.send('<p>hey,activation nickname ' + req.query.nick + ' register shod va hame chi oke,hala mikhay behet telegram beshe <a href="' + txt + '">inja</a>click kon</p>');
-                }
-              });
-            } else {
-              console.log("ay namard codet ghalate sheytoon fek kardi inja kojas????");
-              res.send("ay namard codet ghalate sheytoon fek kardi inja kojas????");
-            }
-          } else {
-            res.send("ghablan nicknamet register shode jooje");
-          }
-        })
-      } else {
-        console.error(err);
-        res.send("An error occurd please contact to admin,email:behnam.ghafary@gmail.com")
-      }
-    } else {
-      res.send("please click on the right link");
-      console.log("someone try to click on wrong link for verify email")
-    }
-  });
-  //==============until here delet it
-  app.get("/:type/brandsfilter/:brandname/:filterid", function(req, res) {
-    Devices.find({
-      "brand": req.params.brandname,
-      "type": req.params.type,
-      "_id": {
-        $ne: req.params.filterid
-      }
-    }).exec(function(error, finderresult) {
-      res.json(finderresult);
+    app.get("/:type/brandsfilter/:brandname/:filterid", function(req, res) {
+      Devices.find({
+        "brand": req.params.brandname,
+        "type": req.params.type,
+        "_id": { $ne: req.params.filterid }
+      }).exec(function(error, finderresult) {
+        res.json(finderresult);
+      });
     });
-  });
   app.get("/*", function(req, res) {
     res.render("index.ejs");
   });
