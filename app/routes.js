@@ -285,9 +285,7 @@ module.exports = function(app, passport) {
       res.json(finderresult);
     });
   });
-  app.get("/*", function(req, res) {
-    res.render("index.ejs");
-  });
+  
 
 };
 
