@@ -11,8 +11,7 @@ var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 
 //----------------------------
-//mongoose.connect("mongodb://ayandeyeman:locked@ds047792.mongolab.com:47792/ayandeyeman"); // connect to our database
-mongoose.connect("mongodb://behnam:locked@ds041623.mongolab.com:41623/medicaldevice"); // connect to our database
+//mongoose.connect("mongodb://behnam:locked@ds041623.mongolab.com:41623/medicaldevice"); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
