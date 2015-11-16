@@ -14,6 +14,53 @@ module.exports = function(app, passport) {
   app.get("/", function(req, res) {
     res.render("index.ejs");
   });
+  
+  //=====================this part most be deleted and its for game register test=======
+  app.get("/register", function(req, res) {
+    var host = req.get("host");
+    if (req.query.rand) {
+      if ((req.protocol + "://" + req.get("host")) == ("http://" + host)) {
+        User.findOne({
+          "nickname": req.query.nick
+        }).exec(function(err, result) {
+          console.log(result);
+          if (result.registered == false) {
+            if (result.randomkey == req.query.rand) {
+              User.update({
+                "nickname": req.query.nick,
+                "registered": false
+              }, {
+                $set: {
+                  "registered": true
+                }
+              }, function(err) {
+                console.log(err);
+              });
+              console.log(result.email + " is verified");
+              var txt = 'https://api.telegram.org/bot127367067:AAH7oUB3iKXC9SwH9jrGMjJ_pnxjhsAD1E0/sendMessage?chat_id=110176673&text=linke click shode doroste va ' + req.query.nick + ' ok shod';
+              res.format({
+                'text/html': function() {
+                  res.send('<p>hey,activation nickname ' + req.query.nick + ' register shod va hame chi oke,hala mikhay behet telegram beshe <a href="' + txt + '">inja</a>click kon</p>');
+                }
+              });
+            } else {
+              console.log("ay namard codet ghalate sheytoon fek kardi inja kojas????");
+              res.send("ay namard codet ghalate sheytoon fek kardi inja kojas????");
+            }
+          } else {
+            res.send("ghablan nicknamet register shode jooje");
+          }
+        })
+      } else {
+        console.error(err);
+        res.send("An error occurd please contact to admin,email:behnam.ghafary@gmail.com")
+      }
+    } else {
+      res.send("please click on the right link");
+      console.log("someone try to click on wrong link for verify email")
+    }
+  });
+  //==============until here delet it
 
   app.get("/ultrasoundgraphy", function(req, res) {
     res.render("ultrasound.ejs");
@@ -226,52 +273,7 @@ module.exports = function(app, passport) {
     });
   });
 
-  //=====================this part most be deleted and its for game register test=======
-  app.get("/register", function(req, res) {
-    var host = req.get("host");
-    if (req.query.rand) {
-      if ((req.protocol + "://" + req.get("host")) == ("http://" + host)) {
-        User.findOne({
-          "nickname": req.query.nick
-        }).exec(function(err, result) {
-          console.log(result);
-          if (result.registered == false) {
-            if (result.randomkey == req.query.rand) {
-              User.update({
-                "nickname": req.query.nick,
-                "registered": false
-              }, {
-                $set: {
-                  "registered": true
-                }
-              }, function(err) {
-                console.log(err);
-              });
-              console.log(result.email + " is verified");
-              var txt = 'https://api.telegram.org/bot127367067:AAH7oUB3iKXC9SwH9jrGMjJ_pnxjhsAD1E0/sendMessage?chat_id=110176673&text=linke click shode doroste va ' + req.query.nick + ' ok shod';
-              res.format({
-                'text/html': function() {
-                  res.send('<p>hey,activation nickname ' + req.query.nick + ' register shod va hame chi oke,hala mikhay behet telegram beshe <a href="' + txt + '">inja</a>click kon</p>');
-                }
-              });
-            } else {
-              console.log("ay namard codet ghalate sheytoon fek kardi inja kojas????");
-              res.send("ay namard codet ghalate sheytoon fek kardi inja kojas????");
-            }
-          } else {
-            res.send("ghablan nicknamet register shode jooje");
-          }
-        })
-      } else {
-        console.error(err);
-        res.send("An error occurd please contact to admin,email:behnam.ghafary@gmail.com")
-      }
-    } else {
-      res.send("please click on the right link");
-      console.log("someone try to click on wrong link for verify email")
-    }
-  });
-  //==============until here delet it
+
   app.get("/:type/brandsfilter/:brandname/:filterid", function(req, res) {
     Devices.find({
       "brand": req.params.brandname,
